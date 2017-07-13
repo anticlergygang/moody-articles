@@ -3,7 +3,9 @@
 		articleURL: ''
 	handleValueChange: (e) ->
 		valueName = e.target.name
-		@setState "#{ valueName }": e.target.value
+		@setState 
+			"#{ valueName }": e.target.value
+			"status": "process"
 	valid: ->
 		@state.articleURL
 	handleSubmit: (e) ->
