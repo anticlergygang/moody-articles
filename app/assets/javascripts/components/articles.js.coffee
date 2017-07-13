@@ -10,9 +10,9 @@
 	render: ->
 		React.DOM.div
 			className: 'articles'
-			React.DOM.h1
+			React.DOM.h3
 				className: 'title'
-				'Articles'
+				'Enter the URL of a blog article and we will find you some music to listen to while you read.'
 			React.createElement ArticleForm, handelNewArticle: @addArticle
 			React.DOM.table
 				className: 'table table-bordered'

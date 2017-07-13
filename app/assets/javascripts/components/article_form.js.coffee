@@ -16,10 +16,10 @@
 		, 'JSON'
 	render: ->
 		React.DOM.form
-			className: 'form-inline'
+			className: 'form-input'
 			onSubmit: @handleSubmit
 			React.DOM.div
-				className: 'form-group'
+				className: 'input-group'
 				React.DOM.input
 					type: 'text'
 					className: 'form-control'
@@ -27,8 +27,10 @@
 					name: 'articleURL'
 					value: @state.articleURL
 					onChange: @handleValueChange
-			React.DOM.button
-				type: 'submit'
-				className: 'btn btn-primary'
-				disabled: !@valid()
-				'Find mood music!'
+				React.DOM.span
+					className: 'input-group-button'
+					React.DOM.button
+						className: 'btn btn-danger'
+						type: 'button'
+						disabled: !@valid()
+						'Search for some music!'
