@@ -3,12 +3,17 @@
 		articles: @props.data
 	getDefaultProps: ->
 		articles: []
+	addArticle: (article) ->
+		articles = @state.articles.slice()
+		articles.push article
+		@setState articles: articles
 	render: ->
 		React.DOM.div
 			className: 'articles'
 			React.DOM.h1
 				className: 'title'
 				'Articles'
+			React.createElement ArticleForm, handelNewArticle: @addArticle
 			React.DOM.table
 				className: 'table table-bordered'
 				React.DOM.thead null
